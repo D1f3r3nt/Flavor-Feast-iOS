@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		1D8908252C05F11200C3C548 /* FlavorFeastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908242C05F11200C3C548 /* FlavorFeastApp.swift */; };
-		1D8908272C05F11200C3C548 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908262C05F11200C3C548 /* ContentView.swift */; };
 		1D8908292C05F11500C3C548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8908282C05F11500C3C548 /* Assets.xcassets */; };
 		1D89082C2C05F11500C3C548 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D89082B2C05F11500C3C548 /* Preview Assets.xcassets */; };
+		1D89083D2C05F74600C3C548 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89083C2C05F74600C3C548 /* HomeScreen.swift */; };
+		1D89083F2C05F75600C3C548 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89083E2C05F75500C3C548 /* HomeViewModel.swift */; };
+		1D8908442C05FD5C00C3C548 /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908432C05FD5C00C3C548 /* SearchComponent.swift */; };
+		1D8908472C061B9900C3C548 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908462C061B9900C3C548 /* CustomColor.swift */; };
+		1D8908492C06265000C3C548 /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908482C06265000C3C548 /* GeneralButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D8908212C05F11200C3C548 /* FlavorFeast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlavorFeast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8908242C05F11200C3C548 /* FlavorFeastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorFeastApp.swift; sourceTree = "<group>"; };
-		1D8908262C05F11200C3C548 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1D8908282C05F11500C3C548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D89082B2C05F11500C3C548 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D89083C2C05F74600C3C548 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		1D89083E2C05F75500C3C548 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1D8908432C05FD5C00C3C548 /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
+		1D8908462C061B9900C3C548 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		1D8908482C06265000C3C548 /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +59,10 @@
 		1D8908232C05F11200C3C548 /* FlavorFeast */ = {
 			isa = PBXGroup;
 			children = (
-				1D8908242C05F11200C3C548 /* FlavorFeastApp.swift */,
-				1D8908262C05F11200C3C548 /* ContentView.swift */,
-				1D8908282C05F11500C3C548 /* Assets.xcassets */,
+				1D8908352C05F3ED00C3C548 /* UI */,
+				1D8908342C05F3E000C3C548 /* Domain */,
+				1D8908332C05F37900C3C548 /* Resources */,
+				1D8908322C05F24100C3C548 /* App */,
 				1D89082A2C05F11500C3C548 /* Preview Content */,
 			);
 			path = FlavorFeast;
@@ -65,6 +74,81 @@
 				1D89082B2C05F11500C3C548 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D8908322C05F24100C3C548 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908242C05F11200C3C548 /* FlavorFeastApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1D8908332C05F37900C3C548 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908282C05F11500C3C548 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1D8908342C05F3E000C3C548 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1D8908352C05F3ED00C3C548 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908452C061B8700C3C548 /* Theme */,
+				1D8908402C05FCFF00C3C548 /* Components */,
+				1D89083B2C05F71F00C3C548 /* Home */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1D89083B2C05F71F00C3C548 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908412C05FD2B00C3C548 /* Components */,
+				1D89083C2C05F74600C3C548 /* HomeScreen.swift */,
+				1D89083E2C05F75500C3C548 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1D8908402C05FCFF00C3C548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908482C06265000C3C548 /* GeneralButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1D8908412C05FD2B00C3C548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908422C05FD3400C3C548 /* Atoms */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1D8908422C05FD3400C3C548 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908432C05FD5C00C3C548 /* SearchComponent.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		1D8908452C061B8700C3C548 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908462C061B9900C3C548 /* CustomColor.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D8908272C05F11200C3C548 /* ContentView.swift in Sources */,
+				1D8908492C06265000C3C548 /* GeneralButton.swift in Sources */,
+				1D89083D2C05F74600C3C548 /* HomeScreen.swift in Sources */,
+				1D8908442C05FD5C00C3C548 /* SearchComponent.swift in Sources */,
+				1D89083F2C05F75600C3C548 /* HomeViewModel.swift in Sources */,
+				1D8908472C061B9900C3C548 /* CustomColor.swift in Sources */,
 				1D8908252C05F11200C3C548 /* FlavorFeastApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import SwiftUI
 struct FlavorFeastApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }
