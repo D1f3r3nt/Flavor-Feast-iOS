@@ -23,6 +23,7 @@ struct SearchComponent: View {
             .onChange(of: text) { newValue in
                 onChange(newValue)
             }
+            .foregroundColor(CustomColor.Gray)
             
             if !text.isEmpty {
                 Image(systemName: "multiply.circle")

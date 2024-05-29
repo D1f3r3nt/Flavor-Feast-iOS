@@ -12,6 +12,7 @@ struct GeneralButton: View {
         ) {
             Text(text)
                 .foregroundColor(CustomColor.Black)
+                .font(.epilogue(size: 16, type: .Bold))
         }
         .frame(height: 48)
         .frame(maxWidth: .infinity)

@@ -9,14 +9,18 @@ struct HomeScreen: View {
                 placeholder: "Search recipes",
                 text: filterText,
                 onChange: { _ in }
-            )
+            ).padding(.horizontal, 16)
             
-            GeneralButton(
-                text: "Surprise Me",
-                onClick: {}
-            )
+            RandomSection()
+                .padding(.horizontal, 16)
+            
+            CustomTitle(text: "Recipes by area")
+                .padding(.horizontal, 16)
+            
+            
+            CustomTitle(text: "Recipes by category")
+                .padding(.horizontal, 16)
         }
-        .padding(16)
     }
 }
 

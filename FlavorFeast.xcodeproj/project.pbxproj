@@ -15,6 +15,15 @@
 		1D8908442C05FD5C00C3C548 /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908432C05FD5C00C3C548 /* SearchComponent.swift */; };
 		1D8908472C061B9900C3C548 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908462C061B9900C3C548 /* CustomColor.swift */; };
 		1D8908492C06265000C3C548 /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908482C06265000C3C548 /* GeneralButton.swift */; };
+		1D89084B2C075FF500C3C548 /* RandomMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89084A2C075FF500C3C548 /* RandomMeal.swift */; };
+		1D89084E2C0768B200C3C548 /* Epilogue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D89084D2C0768B200C3C548 /* Epilogue-Regular.ttf */; };
+		1D8908512C076B5D00C3C548 /* Epilogue-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8908502C076B5D00C3C548 /* Epilogue-Bold.ttf */; };
+		1D8908532C076B6700C3C548 /* Epilogue-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8908522C076B6700C3C548 /* Epilogue-Black.ttf */; };
+		1D8908552C076B7400C3C548 /* Epilogue-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8908542C076B7400C3C548 /* Epilogue-Medium.ttf */; };
+		1D8908572C076B8000C3C548 /* Epilogue-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8908562C076B8000C3C548 /* Epilogue-Thin.ttf */; };
+		1D8908592C076BC700C3C548 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8908582C076BC700C3C548 /* CustomFont.swift */; };
+		1D89085C2C076DE400C3C548 /* RandomSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89085B2C076DE400C3C548 /* RandomSection.swift */; };
+		1D89085E2C076F8200C3C548 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89085D2C076F8200C3C548 /* CustomTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +36,16 @@
 		1D8908432C05FD5C00C3C548 /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
 		1D8908462C061B9900C3C548 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		1D8908482C06265000C3C548 /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
+		1D89084A2C075FF500C3C548 /* RandomMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMeal.swift; sourceTree = "<group>"; };
+		1D89084D2C0768B200C3C548 /* Epilogue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Epilogue-Regular.ttf"; sourceTree = "<group>"; };
+		1D89084F2C07699300C3C548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D8908502C076B5D00C3C548 /* Epilogue-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Epilogue-Bold.ttf"; sourceTree = "<group>"; };
+		1D8908522C076B6700C3C548 /* Epilogue-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Epilogue-Black.ttf"; sourceTree = "<group>"; };
+		1D8908542C076B7400C3C548 /* Epilogue-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Epilogue-Medium.ttf"; sourceTree = "<group>"; };
+		1D8908562C076B8000C3C548 /* Epilogue-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Epilogue-Thin.ttf"; sourceTree = "<group>"; };
+		1D8908582C076BC700C3C548 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		1D89085B2C076DE400C3C548 /* RandomSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSection.swift; sourceTree = "<group>"; };
+		1D89085D2C076F8200C3C548 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +83,7 @@
 				1D8908332C05F37900C3C548 /* Resources */,
 				1D8908322C05F24100C3C548 /* App */,
 				1D89082A2C05F11500C3C548 /* Preview Content */,
+				1D89084F2C07699300C3C548 /* Info.plist */,
 			);
 			path = FlavorFeast;
 			sourceTree = "<group>";
@@ -123,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1D8908482C06265000C3C548 /* GeneralButton.swift */,
+				1D89085D2C076F8200C3C548 /* CustomTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -131,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1D8908422C05FD3400C3C548 /* Atoms */,
+				1D89085A2C076DCD00C3C548 /* Molecules */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -139,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				1D8908432C05FD5C00C3C548 /* SearchComponent.swift */,
+				1D89084A2C075FF500C3C548 /* RandomMeal.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -146,9 +169,31 @@
 		1D8908452C061B8700C3C548 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				1D89084C2C07689000C3C548 /* Font */,
 				1D8908462C061B9900C3C548 /* CustomColor.swift */,
+				1D8908582C076BC700C3C548 /* CustomFont.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		1D89084C2C07689000C3C548 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1D8908562C076B8000C3C548 /* Epilogue-Thin.ttf */,
+				1D8908542C076B7400C3C548 /* Epilogue-Medium.ttf */,
+				1D8908522C076B6700C3C548 /* Epilogue-Black.ttf */,
+				1D8908502C076B5D00C3C548 /* Epilogue-Bold.ttf */,
+				1D89084D2C0768B200C3C548 /* Epilogue-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		1D89085A2C076DCD00C3C548 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				1D89085B2C076DE400C3C548 /* RandomSection.swift */,
+			);
+			path = Molecules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +254,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8908532C076B6700C3C548 /* Epilogue-Black.ttf in Resources */,
+				1D8908572C076B8000C3C548 /* Epilogue-Thin.ttf in Resources */,
+				1D89084E2C0768B200C3C548 /* Epilogue-Regular.ttf in Resources */,
+				1D8908512C076B5D00C3C548 /* Epilogue-Bold.ttf in Resources */,
+				1D8908552C076B7400C3C548 /* Epilogue-Medium.ttf in Resources */,
 				1D89082C2C05F11500C3C548 /* Preview Assets.xcassets in Resources */,
 				1D8908292C05F11500C3C548 /* Assets.xcassets in Resources */,
 			);
@@ -221,10 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D89084B2C075FF500C3C548 /* RandomMeal.swift in Sources */,
+				1D89085E2C076F8200C3C548 /* CustomTitle.swift in Sources */,
 				1D8908492C06265000C3C548 /* GeneralButton.swift in Sources */,
+				1D89085C2C076DE400C3C548 /* RandomSection.swift in Sources */,
 				1D89083D2C05F74600C3C548 /* HomeScreen.swift in Sources */,
 				1D8908442C05FD5C00C3C548 /* SearchComponent.swift in Sources */,
 				1D89083F2C05F75600C3C548 /* HomeViewModel.swift in Sources */,
+				1D8908592C076BC700C3C548 /* CustomFont.swift in Sources */,
 				1D8908472C061B9900C3C548 /* CustomColor.swift in Sources */,
 				1D8908252C05F11200C3C548 /* FlavorFeastApp.swift in Sources */,
 			);
@@ -357,6 +411,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FlavorFeast/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlavorFeast/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -385,6 +440,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FlavorFeast/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlavorFeast/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
