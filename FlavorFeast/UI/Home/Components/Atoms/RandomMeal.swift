@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct RandomMeal: View {
+    var onClick: () -> Void = {}
     
     let image = "https://t3.ftcdn.net/jpg/03/01/97/86/360_F_301978652_O0aPwap1JaEVaAhj3mIlbqNnJGmRyCzC.jpg"
     
@@ -22,9 +23,18 @@ struct RandomMeal: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            AsyncImage(url: URL(string: image))
-                .frame(width: 103, height: 58)
-                .cornerRadius(12)
+            AsyncImage(url: URL(string: image)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 103, height: 58)
+            .cornerRadius(12)
+        }
+        .onTapGesture {
+            onClick()
         }
         .padding(16)
         .frame(maxWidth: .infinity)

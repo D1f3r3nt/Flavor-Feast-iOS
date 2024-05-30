@@ -5,21 +5,21 @@ struct HomeScreen: View {
     
     var body: some View {
         ScrollView {
+            Spacer(minLength: 8)
+            
             SearchComponent(
                 placeholder: "Search recipes",
                 text: filterText,
                 onChange: { _ in }
             ).padding(.horizontal, 16)
             
-            RandomSection()
+            
+            Spacer(minLength: 26)
+            
+            Sections_HomeScreen()
                 .padding(.horizontal, 16)
             
-            CustomTitle(text: "Recipes by area")
-                .padding(.horizontal, 16)
-            
-            
-            CustomTitle(text: "Recipes by category")
-                .padding(.horizontal, 16)
+            Spacer(minLength: 20)
         }
     }
 }
