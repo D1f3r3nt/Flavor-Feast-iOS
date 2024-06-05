@@ -2,7 +2,6 @@ import SwiftUI
 
 struct HomeScreen: View {
     @ObservedObject var viewModel = HomeViewModel()
-    @State private var filterText = ""
     
     var body: some View {
         ScrollView {
@@ -10,18 +9,20 @@ struct HomeScreen: View {
             
             SearchComponent(
                 placeholder: "Search recipes",
-                text: $filterText,
-                onChange: { _ in }
+                text: $viewModel.searchText,
+                onChange: { newText in
+                    viewModel.onSearchTextChange(text: newText)
+                }
             ).padding(.horizontal, 16)
             
             
             Spacer(minLength: 26)
             
-            if filterText == "" {
+            if viewModel.searchMeals.count == 0 {
                 Sections_HomeScreen(viewModel: _viewModel)
                     .padding(.horizontal, 16)
             } else {
-                Search_HomeScreen()
+                Search_HomeScreen(viewModel: _viewModel)
                     .padding(.horizontal, 16)
             }
             

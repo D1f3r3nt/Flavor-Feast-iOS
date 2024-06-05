@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct Search_HomeScreen: View {
-    let list = ["Hola", "Adios"]
+    let viewModel: ObservedObject<HomeViewModel>
     
     var body: some View {
         VStack {
             SearchTitle(text: "Recipes")
             
-            ForEach(list, id: \.self) { item in
-                SearchRow(text: item)
+            ForEach(viewModel.wrappedValue.searchMeals) { meal in
+                SearchRow(text: meal.name)
             }
         }
         .padding(.horizontal, 16)
@@ -17,6 +17,8 @@ struct Search_HomeScreen: View {
 
 struct Search_HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        Search_HomeScreen()
+        @ObservedObject var viewModel = HomeViewModel()
+        
+        Search_HomeScreen(viewModel: _viewModel)
     }
 }

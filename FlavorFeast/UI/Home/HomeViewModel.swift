@@ -3,7 +3,15 @@ import Combine
 
 final class HomeViewModel: ObservableObject {
     @Published var randomState: Status = .idle
+    @Published var categoriesState: Status = .idle
+    @Published var areasState: Status = .idle
+    @Published var ingredientsState: Status = .idle
     @Published var randomMeal: MealUI? = nil
+    @Published var categories: [CategoryUI] = []
+    @Published var areas: [SingleAreaUI] = []
+    @Published var ingredients: [IngredientsUI] = []
+    @Published var searchText: String = ""
+    @Published var searchMeals: [MealUI] = []
     
     var suscriptors = Set<AnyCancellable>()
     var repository: RepositoryInterface
@@ -32,5 +40,33 @@ final class HomeViewModel: ObservableObject {
                 self.randomMeal = meal
             }
             .store(in: &suscriptors)
+    }
+    
+    func onSearchTextChange(text: String) {
+        searchText = text
+        
+        if text == "" {
+            searchMeals = []
+        } else {
+            getByName()
+        }
+    }
+    
+    private func getByName() {
+        repository.getByName(searchText: searchText)
+            .sink { completion in
+                
+                switch completion {
+                    case .failure:
+                        self.searchMeals = []
+                    case .finished:
+                        print("Okey")
+                }
+                
+            } receiveValue: { meals in
+                self.searchMeals = meals
+            }
+            .store(in: &suscriptors)
+
     }
 }
