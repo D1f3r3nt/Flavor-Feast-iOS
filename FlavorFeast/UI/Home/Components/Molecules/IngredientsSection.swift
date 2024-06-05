@@ -1,10 +1,8 @@
 import SwiftUI
 
 struct IngredientsSection: View {
+    let viewModel: ObservedObject<HomeViewModel>
     @State var filter = ""
-    var onFocus: () -> Void
-    
-    let elements = [1, 2, 3]
     
     var body: some View {
         VStack(spacing: 16) {
@@ -15,10 +13,18 @@ struct IngredientsSection: View {
                     placeholder: "",
                     text: $filter,
                     onChange: {_ in},
-                    onFocus: onFocus
+                    onFocus: {
+                        viewModel.wrappedValue.getAllIngredients()
+                    }
                 )
                 
-                ShowFind(elements: elements)
+                let ingredientsFiltered = viewModel.wrappedValue.ingredients.filter({ ingredient in
+                    ingredient.name.lowercased().contains(filter.lowercased())
+                })
+                
+                if ingredientsFiltered.count > 0 && filter != "" {
+                    ShowFind(elements: ingredientsFiltered)
+                }
             }
             .padding(.horizontal, 24)
         }
@@ -27,6 +33,8 @@ struct IngredientsSection: View {
 
 struct IngredientsSection_Previews: PreviewProvider {
     static var previews: some View {
-        IngredientsSection(onFocus: {})
+        @ObservedObject var viewModel = HomeViewModel()
+        
+        IngredientsSection(viewModel: _viewModel)
     }
 }

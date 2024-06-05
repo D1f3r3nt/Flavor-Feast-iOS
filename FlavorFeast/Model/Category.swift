@@ -1,6 +1,6 @@
 import Foundation
 
-struct CategoryUI {
+struct CategoryUI: Identifiable {
     let id: String
     let name: String
     let image: String

@@ -22,6 +22,8 @@ final class HomeViewModel: ObservableObject {
         self.repository = repository
         
         getRandomMeal()
+        getAllAreas()
+        getAllCategories()
     }
     
     func getRandomMeal() {
@@ -40,6 +42,24 @@ final class HomeViewModel: ObservableObject {
                 self.randomMeal = meal
             }
             .store(in: &suscriptors)
+    }
+    
+    func getAllIngredients() {
+        ingredientsState = .loading
+        
+        repository.getAllIngredients()
+            .sink { completion in
+                switch completion {
+                    case .failure:
+                        self.ingredientsState = .error(error: "Error with request")
+                    case .finished:
+                        self.ingredientsState = .idle
+                }
+            } receiveValue: { ingredients in
+                self.ingredients = ingredients
+            }
+            .store(in: &suscriptors)
+
     }
     
     func onSearchTextChange(text: String) {
@@ -67,6 +87,39 @@ final class HomeViewModel: ObservableObject {
                 self.searchMeals = meals
             }
             .store(in: &suscriptors)
-
+    }
+    
+    private func getAllAreas() {
+        self.areasState = .loading
+        
+        repository.getAllAreas()
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    self.areasState = .error(error: "Error with request")
+                case .finished:
+                    self.areasState = .idle
+                }
+            } receiveValue: { areas in
+                self.areas = areas
+            }
+            .store(in: &suscriptors)
+    }
+    
+    private func getAllCategories() {
+        self.categoriesState = .loading
+        
+        repository.getAllCategories()
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    self.categoriesState = .error(error: "Error with request")
+                case .finished:
+                    self.categoriesState = .idle
+                }
+            } receiveValue: { categories in
+                self.categories = categories
+            }
+            .store(in: &suscriptors)
     }
 }

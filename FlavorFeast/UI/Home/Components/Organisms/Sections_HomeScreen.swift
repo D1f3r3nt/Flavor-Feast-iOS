@@ -9,13 +9,11 @@ struct Sections_HomeScreen: View {
         ) {
             RandomSection(viewModel: viewModel)
             
-            IngredientsSection(
-                onFocus: {}
-            )
+            IngredientsSection(viewModel: viewModel)
             
-            AreaSection()
+            AreaSection(viewModel: viewModel)
             
-            CategorySection()
+            CategorySection(viewModel: viewModel)
         }
     }
 }

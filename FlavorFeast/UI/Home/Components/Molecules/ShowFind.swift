@@ -1,20 +1,20 @@
 import SwiftUI
 
 struct ShowFind: View {
-    var elements: [Int]
+    var elements: [IngredientsUI]
     
     var body: some View {
         VStack(spacing: 0) {
             ForEach(
                 Array(elements.take(3).enumerated()),
                 id: \.offset
-            ) { index, value in
+            ) { index, ingredient in
                 if (index > 0) {
                     Divider()
                     .background(CustomColor.Gray)
                 }
                 
-                FindRow(text: "\(value)")
+                FindRow(text: ingredient.name)
             }
         }
         .cornerRadius(12)
@@ -24,6 +24,6 @@ struct ShowFind: View {
 
 struct ShowFind_Previews: PreviewProvider {
     static var previews: some View {
-        ShowFind(elements: [1, 2, 3])
+        ShowFind(elements: [PlayTest.getIngredientUI()])
     }
 }

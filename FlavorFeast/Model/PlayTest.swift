@@ -16,6 +16,10 @@ struct PlayTest {
             source: ""
         )
     }
+    
+    static func getIngredientUI() -> IngredientsUI {
+        return IngredientsUI(id: "1", name: "Potato", description: "Descripcion")
+    }
 }
 
 

@@ -1,14 +1,21 @@
 import SwiftUI
 
 struct AreaSection: View {
+    let viewModel: ObservedObject<HomeViewModel>
+    
     var body: some View {
         VStack(spacing: 16) {
             CustomTitle(text: "Recipes by area")
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
-                    ForEach((1...10), id: \.self) {
-                        FoodCard(text: "\($0)")
+                    ForEach(viewModel.wrappedValue.areas) { area in
+                        FoodCard(
+                            text: area.area,
+                            image: getFlagFromAreaName(area: area.area.lowercased()),
+                            isImageLocal: true,
+                            onClick: {}
+                        )
                     }
                 }
             }
@@ -18,6 +25,8 @@ struct AreaSection: View {
 
 struct AreaSection_Previews: PreviewProvider {
     static var previews: some View {
-        AreaSection()
+        @ObservedObject var viewModel = HomeViewModel()
+        
+        AreaSection(viewModel: _viewModel)
     }
 }
