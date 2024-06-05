@@ -2,8 +2,7 @@ import SwiftUI
 
 struct RandomMeal: View {
     var onClick: () -> Void = {}
-    
-    let image = "https://t3.ftcdn.net/jpg/03/01/97/86/360_F_301978652_O0aPwap1JaEVaAhj3mIlbqNnJGmRyCzC.jpg"
+    var meal: MealUI
     
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
@@ -11,19 +10,19 @@ struct RandomMeal: View {
                 alignment: .leading,
                 spacing: 8
             ) {
-                Text("Chocolate Cake")
+                Text(meal.name)
                     .foregroundColor(CustomColor.Black)
                     .lineLimit(1)
                     .font(.epilogue(size: 16, type: .Bold))
             
-                Text("Dessert")
+                Text(meal.category)
                     .foregroundColor(CustomColor.Gray)
                     .lineLimit(1)
                     .font(.epilogue(size: 14))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            AsyncImage(url: URL(string: image)) { image in
+            AsyncImage(url: URL(string: meal.image)) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -46,6 +45,6 @@ struct RandomMeal: View {
 
 struct RandomMeal_Previews: PreviewProvider {
     static var previews: some View {
-        RandomMeal()
+        RandomMeal(meal: PlayTest.getMealUI())
     }
 }

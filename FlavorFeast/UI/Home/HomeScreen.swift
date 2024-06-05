@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @ObservedObject var viewModel = HomeViewModel()
     @State private var filterText = ""
     
     var body: some View {
@@ -9,15 +10,21 @@ struct HomeScreen: View {
             
             SearchComponent(
                 placeholder: "Search recipes",
-                text: filterText,
+                text: $filterText,
                 onChange: { _ in }
             ).padding(.horizontal, 16)
             
             
             Spacer(minLength: 26)
             
-            Sections_HomeScreen()
-                .padding(.horizontal, 16)
+            if filterText == "" {
+                Sections_HomeScreen(viewModel: _viewModel)
+                    .padding(.horizontal, 16)
+            } else {
+                Search_HomeScreen()
+                    .padding(.horizontal, 16)
+            }
+            
             
             Spacer(minLength: 20)
         }

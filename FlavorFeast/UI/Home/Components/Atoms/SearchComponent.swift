@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SearchComponent: View {
     var placeholder: String
-    @State var text: String
+    var text: Binding<String>
     var onChange: (_ value: String) -> Void
     var onFocus: () -> Void = {}
     
@@ -13,23 +13,23 @@ struct SearchComponent: View {
             
             TextField(
                 placeholder,
-                text: $text,
+                text: text,
                 onEditingChanged: { focus in
                     if focus {
                         onFocus()
                     }
                 }
             )
-            .onChange(of: text) { newValue in
+            .onChange(of: text.wrappedValue) { newValue in
                 onChange(newValue)
             }
             .foregroundColor(CustomColor.Gray)
             
-            if !text.isEmpty {
+            if !text.wrappedValue.isEmpty {
                 Image(systemName: "multiply.circle")
                     .foregroundColor(CustomColor.Gray)
                     .onTapGesture {
-                        text = ""
+                        text.wrappedValue = ""
                     }
             }
         }
@@ -42,9 +42,11 @@ struct SearchComponent: View {
 
 struct SearchComponent_Previews: PreviewProvider {
     static var previews: some View {
+        @State var text = ""
+        
         SearchComponent(
             placeholder: "Placeholder",
-            text: "",
+            text: $text,
             onChange: {_ in }
         )
     }

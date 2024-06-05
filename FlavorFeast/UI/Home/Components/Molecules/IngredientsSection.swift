@@ -13,7 +13,7 @@ struct IngredientsSection: View {
             VStack(spacing: 8) {
                 SearchComponent(
                     placeholder: "",
-                    text: filter,
+                    text: $filter,
                     onChange: {_ in},
                     onFocus: onFocus
                 )

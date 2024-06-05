@@ -1,18 +1,26 @@
 import SwiftUI
 
 struct RandomSection: View {
+    let viewModel: ObservedObject<HomeViewModel>
+    
     var body: some View {
         VStack {
             GeneralButton(
                 text: "Surprise Me",
-                onClick: {}
+                onClick: {
+                    viewModel.wrappedValue.getRandomMeal()
+                }
             )
             
-            // TODO: meal != nil
-            if true {
+            if viewModel.wrappedValue.randomMeal != nil {
                 Spacer(minLength: 12)
                 
-                RandomMeal()
+                RandomMeal(
+                    onClick: {
+                        // TODO: NAVIGATE TO DETAIL
+                    },
+                    meal: viewModel.wrappedValue.randomMeal!
+                )
             }
         }
     }
@@ -20,6 +28,7 @@ struct RandomSection: View {
 
 struct RandomSection_Previews: PreviewProvider {
     static var previews: some View {
-        RandomSection()
+        @ObservedObject var viewModel = HomeViewModel()
+        RandomSection(viewModel: _viewModel)
     }
 }

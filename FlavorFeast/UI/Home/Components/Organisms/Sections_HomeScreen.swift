@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct Sections_HomeScreen: View {
+    let viewModel: ObservedObject<HomeViewModel>
+    
     var body: some View {
         VStack(
             spacing: 26
         ) {
-            RandomSection()
+            RandomSection(viewModel: viewModel)
             
             IngredientsSection(
                 onFocus: {}
@@ -20,6 +22,8 @@ struct Sections_HomeScreen: View {
 
 struct Sections_HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        Sections_HomeScreen()
+        @ObservedObject var viewModel = HomeViewModel()
+        
+        Sections_HomeScreen(viewModel: _viewModel)
     }
 }
