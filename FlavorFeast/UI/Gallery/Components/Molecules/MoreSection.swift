@@ -10,7 +10,11 @@ struct MoreSection: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(viewModel.wrappedValue.meals) { meal in
-                        GalleryRecipe(size: 160, meal: meal)
+                        NavigationLink {
+                            DetailScreen(viewModel: DetailViewModel(id: meal.id))
+                        } label: {
+                            GalleryRecipe(size: 160, meal: meal)
+                        }
                     }
                 }
             }

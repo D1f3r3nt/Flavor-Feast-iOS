@@ -13,7 +13,8 @@ struct MealUI: Identifiable {
     let source: String
 }
 
-struct ComponentUI {
+struct ComponentUI: Identifiable {
+    let id: UUID = UUID()
     let ingredient: String
     let measure: String
 }
