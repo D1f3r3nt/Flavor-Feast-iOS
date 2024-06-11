@@ -10,11 +10,17 @@ struct CategorySection: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(viewModel.wrappedValue.categories) { category in
-                        FoodCard(
-                            text: category.name,
-                            image: category.image,
-                            onClick: {}
-                        )
+                        NavigationLink {
+                            GalleryScreen(viewModel: GalleryViewModel(
+                                type: .CATEGORY,
+                                nameType: category.name
+                            ))
+                        } label: {
+                            FoodCard(
+                                text: category.name,
+                                image: category.image
+                            )
+                        }
                     }
                 }
             }

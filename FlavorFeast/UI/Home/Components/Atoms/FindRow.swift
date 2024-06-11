@@ -2,7 +2,6 @@ import SwiftUI
 
 struct FindRow: View {
     var text: String
-    var onClick: () -> Void = {}
     
     var body: some View {
         HStack(alignment: .center) {
@@ -15,7 +14,6 @@ struct FindRow: View {
             Image(systemName: "chevron.forward")
                 .padding(12)
         }
-        .onTapGesture {onClick()}
         .background(CustomColor.WhiteGray)
     }
 }

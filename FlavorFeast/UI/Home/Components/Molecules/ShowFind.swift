@@ -13,8 +13,14 @@ struct ShowFind: View {
                     Divider()
                     .background(CustomColor.Gray)
                 }
-                
-                FindRow(text: ingredient.name)
+                NavigationLink {
+                    GalleryScreen(viewModel: GalleryViewModel(
+                        type: .INGREDIENTS,
+                        nameType: ingredient.name
+                    ))
+                } label: {
+                    FindRow(text: ingredient.name)
+                }
             }
         }
         .cornerRadius(12)

@@ -1,6 +1,6 @@
 import Foundation
 
-struct SingleMealUI {
+struct SingleMealUI: Identifiable {
     let name: String
     let image: String
     let id: String

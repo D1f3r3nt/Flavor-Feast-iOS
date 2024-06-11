@@ -70,7 +70,7 @@ final class MealApi {
     }
     
     func getByIngredient(ingredient: String) -> URLRequest {
-        let path = "/api/json/v1/1/filter.php?i=\(ingredient)"
+        let path = "/api/json/v1/1/filter.php?i=\(ingredient.replacingOccurrences(of: " ", with: "%20"))"
         let url = "\(host)\(path)"
         
         var request = URLRequest(url: URL(string: url)!)

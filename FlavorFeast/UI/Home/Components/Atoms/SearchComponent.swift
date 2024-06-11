@@ -20,6 +20,8 @@ struct SearchComponent: View {
                     }
                 }
             )
+            .autocorrectionDisabled(true)
+            .textInputAutocapitalization(.never)
             .onChange(of: text.wrappedValue) { newValue in
                 onChange(newValue)
             }

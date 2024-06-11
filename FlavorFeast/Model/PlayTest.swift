@@ -17,6 +17,14 @@ struct PlayTest {
         )
     }
     
+    static func getSingleMealUI() -> SingleMealUI {
+        return SingleMealUI(
+            name: "Pankake",
+            image: "https://media.istockphoto.com/id/161170090/es/foto/panqueques-con-bayas-y-arce-alm%C3%ADbar.jpg?s=612x612&w=0&k=20&c=soVbuuI5ynQBM7gbf4i5o2O9WtYjhIilUnZy3603Jck=",
+            id: "1"
+        )
+    }
+    
     static func getIngredientUI() -> IngredientsUI {
         return IngredientsUI(id: "1", name: "Potato", description: "Descripcion")
     }

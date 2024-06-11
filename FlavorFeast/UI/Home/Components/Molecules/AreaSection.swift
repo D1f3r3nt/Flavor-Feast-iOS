@@ -10,12 +10,18 @@ struct AreaSection: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(viewModel.wrappedValue.areas) { area in
-                        FoodCard(
-                            text: area.area,
-                            image: getFlagFromAreaName(area: area.area.lowercased()),
-                            isImageLocal: true,
-                            onClick: {}
-                        )
+                        NavigationLink {
+                            GalleryScreen(viewModel: GalleryViewModel(
+                                type: .AREA,
+                                nameType: area.area
+                            ))
+                        } label: {
+                            FoodCard(
+                                text: area.area,
+                                image: getFlagFromAreaName(area: area.area.lowercased()),
+                                isImageLocal: true
+                            )
+                        }
                     }
                 }
             }

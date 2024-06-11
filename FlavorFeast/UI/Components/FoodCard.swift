@@ -4,7 +4,6 @@ struct FoodCard: View {
     var text: String
     var image: String
     var isImageLocal: Bool = false
-    var onClick: () -> Void
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -30,9 +29,6 @@ struct FoodCard: View {
             Text(text)
                 .foregroundColor(CustomColor.Black)
         }
-        .onTapGesture {
-            onClick()
-        }
     }
 }
 
@@ -40,8 +36,7 @@ struct FoodCard_Previews: PreviewProvider {
     static var previews: some View {
         FoodCard(
             text: "Food",
-            image: "https://media.istockphoto.com/id/1457433817/es/foto/grupo-de-alimentos-saludables-para-la-dieta-flexitariana.jpg?s=612x612&w=0&k=20&c=2w5l2DEJWFGxSnmJxX_RCE40RriE7WtSoKKpuxw5luE=",
-            onClick: {}
+            image: "https://media.istockphoto.com/id/1457433817/es/foto/grupo-de-alimentos-saludables-para-la-dieta-flexitariana.jpg?s=612x612&w=0&k=20&c=2w5l2DEJWFGxSnmJxX_RCE40RriE7WtSoKKpuxw5luE="
         )
     }
 }
