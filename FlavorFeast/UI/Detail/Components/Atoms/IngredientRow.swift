@@ -4,7 +4,7 @@ struct IngredientRow: View {
     var component: ComponentUI
     
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(component.ingredient)
                 .font(.epilogue(size: 16, type: .Medium))
                 .lineLimit(1)
@@ -14,7 +14,7 @@ struct IngredientRow: View {
                 .foregroundColor(CustomColor.Gray)
                 .lineLimit(1)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

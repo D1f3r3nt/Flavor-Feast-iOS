@@ -11,7 +11,7 @@ struct MoreSection: View {
                 HStack(spacing: 12) {
                     ForEach(viewModel.wrappedValue.meals) { meal in
                         NavigationLink {
-                            DetailScreen(viewModel: DetailViewModel(id: meal.id))
+                            DetailScreen(id: meal.id)
                         } label: {
                             GalleryRecipe(size: 160, meal: meal)
                         }

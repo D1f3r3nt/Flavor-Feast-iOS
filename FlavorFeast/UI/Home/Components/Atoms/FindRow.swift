@@ -13,6 +13,7 @@ struct FindRow: View {
             
             Image(systemName: "chevron.forward")
                 .padding(12)
+                .foregroundColor(CustomColor.Black)
         }
         .background(CustomColor.WhiteGray)
     }

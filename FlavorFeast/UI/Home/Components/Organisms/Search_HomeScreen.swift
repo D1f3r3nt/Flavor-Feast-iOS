@@ -8,7 +8,11 @@ struct Search_HomeScreen: View {
             SearchTitle(text: "Recipes")
             
             ForEach(viewModel.wrappedValue.searchMeals) { meal in
-                SearchRow(text: meal.name)
+                NavigationLink {
+                    DetailScreen(id: meal.id)
+                } label: {
+                    SearchRow(text: meal.name)
+                }
             }
         }
         .padding(.horizontal, 16)

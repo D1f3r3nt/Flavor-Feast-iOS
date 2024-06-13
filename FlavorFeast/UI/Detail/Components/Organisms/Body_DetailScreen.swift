@@ -4,19 +4,24 @@ struct Body_DetailScreen: View {
     let viewModel: ObservedObject<DetailViewModel>
     
     var body: some View {
-        ScrollView {
-            if self.viewModel.wrappedValue.meal != nil {
-                HStack(spacing: 24) {
+        if self.viewModel.wrappedValue.meal != nil {
+            ScrollView {
+                VStack(spacing: 24) {
                     HeaderSection(viewModel: viewModel)
                     
                     InfoSection(viewModel: viewModel)
+                        .padding(.top, 24)
+                        .background(CustomColor.White)
                     
                     InstructionsSection(viewModel: viewModel)
                     
                     IngredientSection(viewModel: viewModel)
                 }
                 .padding(.bottom, 16)
-            } else {
+            }
+        } else {
+            VStack(alignment: .center, spacing: 14) {
+                Text("Loading")
                 ProgressView()
             }
         }

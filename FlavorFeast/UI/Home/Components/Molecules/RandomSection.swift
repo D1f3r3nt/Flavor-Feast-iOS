@@ -15,12 +15,13 @@ struct RandomSection: View {
             if viewModel.wrappedValue.randomMeal != nil {
                 Spacer(minLength: 12)
                 
-                RandomMeal(
-                    onClick: {
-                        // TODO: NAVIGATE TO DETAIL
-                    },
-                    meal: viewModel.wrappedValue.randomMeal!
-                )
+                NavigationLink {
+                    DetailScreen(id: viewModel.wrappedValue.randomMeal!.id)
+                } label: {
+                    RandomMeal(
+                        meal: viewModel.wrappedValue.randomMeal!
+                    )
+                }
             }
         }
     }

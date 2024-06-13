@@ -4,9 +4,12 @@ struct NameLabel: View {
     var text: String
     
     var body: some View {
-        Text(text)
-            .font(.epilogue(size: 24, type: .Bold))
-            .lineLimit(2)
+        HStack {
+            Text(text)
+                .font(.epilogue(size: 24, type: .Bold))
+                .lineLimit(2)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

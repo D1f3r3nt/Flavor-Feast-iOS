@@ -11,10 +11,10 @@ struct CategorySection: View {
                 HStack(spacing: 12) {
                     ForEach(viewModel.wrappedValue.categories) { category in
                         NavigationLink {
-                            GalleryScreen(viewModel: GalleryViewModel(
+                            GalleryScreen(
                                 type: .CATEGORY,
                                 nameType: category.name
-                            ))
+                            )
                         } label: {
                             FoodCard(
                                 text: category.name,

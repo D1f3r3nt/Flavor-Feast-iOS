@@ -1,8 +1,14 @@
 import SwiftUI
 
 struct GalleryScreen: View {
-    
     @ObservedObject var viewModel: GalleryViewModel
+    
+    init(
+        type: GalleryTypes,
+        nameType: String
+    ) {
+        self.viewModel = GalleryViewModel(type: type, nameType: nameType)
+    }
     
     // - MARK: Appear lifecycle
     func onAppear() {
@@ -30,6 +36,6 @@ struct GalleryScreen: View {
 
 struct GalleryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GalleryScreen(viewModel: GalleryViewModel(type: .CATEGORY, nameType: "Dessert"))
+        GalleryScreen(type: .CATEGORY, nameType: "Dessert")
     }
 }

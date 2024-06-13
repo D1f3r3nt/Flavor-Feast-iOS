@@ -1,4 +1,3 @@
-import Foundation
 import Combine
 
 final class DetailViewModel: ObservableObject {
@@ -27,10 +26,14 @@ final class DetailViewModel: ObservableObject {
         repository.getByID(id: id)
             .sink { completion in
                 switch completion {
-                case .failure:
-                    self.mealState = .error(error: "Error with the request")
-                case .finished:
-                    self.mealState = .idle
+                    case .failure(let err):
+                        self.mealState = .error(error: "Error with the request")
+                    case .finished:
+                        self.mealState = .idle
+
+                        if self.meal == nil {
+                            self.getDataFromID()
+                        }
                 }
             } receiveValue: { meal in
                 self.meal = meal

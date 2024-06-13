@@ -2,6 +2,7 @@ import SwiftUI
 
 struct Body_HomeScreen: View {
     let viewModel: ObservedObject<HomeViewModel>
+    @State var search: String = ""
     
     var body: some View {
         ScrollView {
@@ -9,7 +10,7 @@ struct Body_HomeScreen: View {
             
             SearchComponent(
                 placeholder: "Search recipes",
-                text: viewModel.projectedValue.searchText,
+                text: $search,
                 onChange: { newText in
                     viewModel.wrappedValue.onSearchTextChange(text: newText)
                 }

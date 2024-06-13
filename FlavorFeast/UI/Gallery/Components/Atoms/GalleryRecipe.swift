@@ -18,6 +18,7 @@ struct GalleryRecipe: View {
             
             Text(meal.name)
                 .font(.epilogue(size: 16, type: .Medium))
+                .foregroundColor(CustomColor.Black)
                 .lineLimit(1)
             
             Text("#\(meal.id)")

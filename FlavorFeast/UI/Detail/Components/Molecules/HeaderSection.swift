@@ -27,6 +27,9 @@ struct HeaderSection: View {
                     .onTapGesture {
                         self.presentationMode.wrappedValue.dismiss()
                     }
+                    .padding(.top, 16)
+                    .padding(.leading, 16)
+                    .foregroundColor(CustomColor.White)
 
             }
         } else {

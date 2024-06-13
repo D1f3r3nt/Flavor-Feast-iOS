@@ -11,10 +11,10 @@ struct AreaSection: View {
                 HStack(spacing: 12) {
                     ForEach(viewModel.wrappedValue.areas) { area in
                         NavigationLink {
-                            GalleryScreen(viewModel: GalleryViewModel(
+                            GalleryScreen(
                                 type: .AREA,
                                 nameType: area.area
-                            ))
+                            )
                         } label: {
                             FoodCard(
                                 text: area.area,

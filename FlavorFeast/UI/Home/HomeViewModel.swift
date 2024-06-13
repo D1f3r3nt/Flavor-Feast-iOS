@@ -1,4 +1,3 @@
-import Foundation
 import Combine
 
 final class HomeViewModel: ObservableObject {
@@ -80,7 +79,7 @@ final class HomeViewModel: ObservableObject {
                     case .failure:
                         self.searchMeals = []
                     case .finished:
-                        print("Okey")
+                        print("FINISH getByName()")
                 }
                 
             } receiveValue: { meals in

@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct RandomMeal: View {
-    var onClick: () -> Void = {}
     var meal: MealUI
     
     var body: some View {
@@ -31,9 +30,6 @@ struct RandomMeal: View {
             }
             .frame(width: 103, height: 58)
             .cornerRadius(12)
-        }
-        .onTapGesture {
-            onClick()
         }
         .padding(16)
         .frame(maxWidth: .infinity)

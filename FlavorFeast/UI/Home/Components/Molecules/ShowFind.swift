@@ -14,10 +14,10 @@ struct ShowFind: View {
                     .background(CustomColor.Gray)
                 }
                 NavigationLink {
-                    GalleryScreen(viewModel: GalleryViewModel(
+                    GalleryScreen(
                         type: .INGREDIENTS,
                         nameType: ingredient.name
-                    ))
+                    )
                 } label: {
                     FindRow(text: ingredient.name)
                 }
