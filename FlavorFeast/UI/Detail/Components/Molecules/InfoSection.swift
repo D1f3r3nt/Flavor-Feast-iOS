@@ -32,7 +32,11 @@ struct InfoSection: View {
                 GeneralButton(
                     text: "Watch video",
                     onClick: {
-                        openURL(URL(string: currentMeal!.video)!)
+                        guard let url = URL(string: currentMeal!.video) else {
+                            return
+                        }
+                        
+                        openURL(url)
                     }
                 )
                 .padding(.horizontal, 16)
